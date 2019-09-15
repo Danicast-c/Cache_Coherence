@@ -190,45 +190,59 @@ void cache_control_thread(cache_control *cache_control){
     }
 }
 void core_1_thread(core *core_1){
-    while(true){
-        //core_1->my_cache->print_cache();
-        if (core_1->get_delay()==0){
-            if(!core_1->my_cache->get_waiting()){
-                core_1->work();
+    while(true) {
+        int clock_now = clk;
+        if (clock_now != clk) {
+            //core_1->my_cache->print_cache();
+            if (core_1->get_delay() == 0) {
+                if (!core_1->my_cache->get_waiting()) {
+                    core_1->work();
+                }
+            } else if (core_1->get_delay() != 0) {
+                core_1->decrease_delay();
             }
-        }else if (core_1->get_delay()!=0){
-            core_1->decrease_delay();
         }
     }
 }
-void core_2_thread(core *core_2){
-    while(true){
-        if (core_2->get_delay()==0){
-            if(!core_2->my_cache->get_waiting()){
-                core_2->work();
+void core_2_thread(core *core_2) {
+    while (true) {
+        int clock_now = clk;
+        if (clock_now != clk) {
+            if (core_2->get_delay() == 0) {
+                if (!core_2->my_cache->get_waiting()) {
+                    core_2->work();
+                }
+            } else if (core_2->get_delay() != 0) {
+                core_2->decrease_delay();
             }
-        }else if (core_2->get_delay()!=0){
-            core_2->decrease_delay();
         }
     }
-}void core_3_thread(core *core_3){
-    while(true){
-        if (core_3->get_delay()==0){
-            if(!core_3->my_cache->get_waiting()){
-                core_3->work();
+}
+void core_3_thread(core *core_3) {
+    while (true) {
+        int clock_now = clk;
+        if (clock_now != clk) {
+            if (core_3->get_delay() == 0) {
+                if (!core_3->my_cache->get_waiting()) {
+                    core_3->work();
+                }
+            } else if (core_3->get_delay() != 0) {
+                core_3->decrease_delay();
             }
-        }else if (core_3->get_delay()!=0){
-            core_3->decrease_delay();
         }
     }
-}void core_4_thread(core *core_4){
-    while(true){
-        if (core_4->get_delay()==0){
-            if(!core_4->my_cache->get_waiting()){
-                core_4->work();
+}
+void core_4_thread(core *core_4) {
+    while (true) {
+        int clock_now = clk;
+        if (clock_now != clk) {
+            if (core_4->get_delay() == 0) {
+                if (!core_4->my_cache->get_waiting()) {
+                    core_4->work();
+                }
+            } else if (core_4->get_delay() != 0) {
+                core_4->decrease_delay();
             }
-        }else if (core_4->get_delay()!=0){
-            core_4->decrease_delay();
         }
     }
 }

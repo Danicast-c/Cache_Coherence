@@ -153,7 +153,7 @@ void cache::to_cache(int direction, int value) {
 void cache::write_cache(int tag, int status, int data){
     int pos = tag%8;
 
-    if (tag == cache_block[pos].tag and cache_block[pos].status != 0){
+    if (tag == cache_block[pos].tag){
         cache_block[pos].data = data;
         cache_block[pos].status = 1;
     }else{

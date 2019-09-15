@@ -11,7 +11,7 @@ struct cache_struct{
 };
 struct memory_position{
     //int status = 2;
-    int data = 9;
+    int data = 0;
 };
 struct request{
     int id;
@@ -26,11 +26,6 @@ struct to_cache_request{
     int status;
     int data;
 };
-//struct to_cache_request{
-//    int cache;
-//    int type;
-//    int tag;
-//};
 
 struct status_update{
     int new_status;
