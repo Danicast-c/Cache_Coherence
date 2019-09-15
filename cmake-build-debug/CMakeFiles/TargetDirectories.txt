@@ -1,0 +1,3 @@
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cmake-build-debug/CMakeFiles/Cache_Coherence.dir

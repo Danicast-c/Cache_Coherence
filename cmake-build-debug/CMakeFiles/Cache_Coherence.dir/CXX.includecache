@@ -1,0 +1,90 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/bus.h
+memory.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/memory.h
+queue_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/queue_control.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h
+queue_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/queue_control.h
+structs.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/structs.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.h
+cache.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h
+memory.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/memory.h
+queue_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/queue_control.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/clock.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/colors.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/core.h
+cache.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h
+program.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/program.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/delay_control.h
+core.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/core.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/main.cpp
+iostream
+-
+thread
+-
+fstream
+-
+colors.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/colors.h
+memory.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/memory.h
+clock.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/clock.h
+cache.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h
+core.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/core.h
+program.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/program.h
+cache_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.h
+bus.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/bus.h
+status_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/status_control.h
+delay_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/delay_control.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/memory.h
+fstream
+-
+structs.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/structs.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/program.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/queue_control.h
+queue
+-
+memory.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/memory.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/status_control.h
+cache.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/structs.h
+
