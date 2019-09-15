@@ -1,0 +1,1 @@
+In cache: #3  CACHE READ MISS: Tag = 4

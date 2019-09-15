@@ -39,6 +39,21 @@ void cache_control::read_to_cache_request(){ // LLAMADA EN HILO
     }
 };
 
+void cache_control::stop_waiting(int id){
+    if (id==1){
+        cache_1->set_waiting(false);
+    } else if (id==2){
+        cache_2->set_waiting(false);
+    } else if (id==3){
+        cache_3->set_waiting(false);
+    } else if (id==4){
+        cache_4->set_waiting(false);
+    } else {
+        std::cout << "ERROR en cache_control::stop_waiting" << std::endl;
+    }
+
+}
+
 void cache_control::read_cache_request(){ // LLAMADA EN HILO
 
     while (!queues->cache_request_is_empty()) {
@@ -82,7 +97,8 @@ void cache_control::read_cache_request(){ // LLAMADA EN HILO
                 load_to_cache(request.id, tag_searched, cache_1->get_data(pos_searched), 2);
                 unfinished = false;
                 //Cambia el estado de espera del procesador
-                cache_1->set_waiting(false);
+               // cache_1->set_waiting(false);
+                stop_waiting(request.id);
 
             }
         }
@@ -116,7 +132,8 @@ void cache_control::read_cache_request(){ // LLAMADA EN HILO
                 load_to_cache(request.id, tag_searched, cache_2->get_data(pos_searched), 2);
                 unfinished = false;
                 //Cambia el estado de espera del procesador
-                cache_2->set_waiting(false);
+                //cache_2->set_waiting(false);
+                stop_waiting(request.id);
             }
         }
         if (unfinished and request.id != 3) {
@@ -149,7 +166,8 @@ void cache_control::read_cache_request(){ // LLAMADA EN HILO
                 load_to_cache(request.id, tag_searched, cache_3->get_data(pos_searched), 2);
                 unfinished = false;
                 //Cambia el estado de espera del procesador
-                cache_3->set_waiting(false);
+                //cache_3->set_waiting(false);
+                stop_waiting(request.id);
             }
         }
         if (unfinished and request.id != 4) {
@@ -182,7 +200,8 @@ void cache_control::read_cache_request(){ // LLAMADA EN HILO
                 load_to_cache(request.id, tag_searched, cache_4->get_data(pos_searched), 2);
                 unfinished = false;
                 //Cambia el estado de espera del procesador
-                cache_3->set_waiting(false);
+                //cache_3->set_waiting(false);
+                stop_waiting(request.id);
             }
         }
         if (unfinished) {

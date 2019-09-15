@@ -9,7 +9,7 @@
 cache::cache(int new_id, class queue_control *new_queues) {
     id=new_id;
     queues = new_queues;
-
+    clean_log();
 }
 
 
@@ -44,6 +44,7 @@ void cache::read_mem(int direction){
             finish = 1; //termina la función
             //console->write_core(cache::id,"CACHE READ HIT: Position = "+std::to_string(pos));_______*******
             std::cout<<"In cache: #"+std::to_string(id)+ "  CACHE READ HIT: Position = "+std::to_string(pos)<<std::endl;
+            write_log("In cache: #"+std::to_string(id)+ "  CACHE READ HIT: Position = "+std::to_string(pos));
         }
     }
     if (finish == 0){
@@ -51,11 +52,10 @@ void cache::read_mem(int direction){
         waiting=true; // Pone la cache en espera mientras espera el dato
         //console->write_core(cache::id,"CACHE READ MISS: Tag = "+std::to_string(direction));_______*******
         std::cout<<"In cache: #"+std::to_string(id)+ "  CACHE READ MISS: Tag = "+std::to_string(direction)<<std::endl;
-
+        write_log("In cache: #"+std::to_string(id)+ "  CACHE READ MISS: Tag = "+std::to_string(direction));
         //Crea solicitud para enviar
         request rqst{};
         rqst.id = cache::id;
-        rqst.pos = pos;
         rqst.status = 2;
         rqst.data = cache_block[pos].data;
 
@@ -63,6 +63,7 @@ void cache::read_mem(int direction){
         if (cache_block[pos].status==1){
             //Solicitud de tipo write
             rqst.type = 1;
+            rqst.pos = cache_block[pos].tag ;
             //Mete la solucitud directo a memoria
             queues->push_request_memory(rqst);
             //
@@ -70,10 +71,9 @@ void cache::read_mem(int direction){
 
         //Solicitud de tipo read
         rqst.type = 0;
+        rqst.pos = direction;
         //Mete la solicitud en el queue_control;
         queues->push_request_cache(rqst);
-        //pone al procesador en espera
-        waiting=true;
     }
 }
 void cache::write_mem(int tag, int data) {
@@ -103,10 +103,12 @@ void cache::write_mem(int tag, int data) {
         //Retorna el dato
         //console->write_core(cache::id,"CACHE WRITE HIT: Position = "+std::to_string(pos));_______*******
         std::cout<<"In cache: #"+std::to_string(id)+ "  CACHE WRITE HIT: Position = "+std::to_string(pos)<<std::endl;
+        write_log("In cache: #"+std::to_string(id)+ "  CACHE WRITE HIT: Position = "+std::to_string(pos));
     } if (finish == 0){
         //Existe un write miss
         //console->write_core(cache::id,"CACHE WRITE MISS: Position = "+std::to_string(pos));_______*******
         std::cout<<"In cache: #"+std::to_string(id)+ "  CACHE WRITE MISS: Position = "+std::to_string(pos)<<std::endl;
+        write_log("In cache: #"+std::to_string(id)+ "  CACHE WRITE MISS: Position = "+std::to_string(pos));
         //Si el dato esta en M se debe hacer WriteBack
         if (cache_block[pos].status==1){
 
@@ -191,8 +193,17 @@ void cache::print_cache(){
         file << std::to_string(i.status) +"\n";
     }
     file.close();
+}
 
-
+void cache::clean_log(){
+    file2.open("core_"+std::to_string(id)+"_log.txt");
+    file2.clear();
+    file2.close();
+}
+void cache::write_log(std::string log){
+    file2.open("core_"+std::to_string(id)+"_log.txt");
+    file2 << log+"\n";
+    file2.close();
 }
 
 

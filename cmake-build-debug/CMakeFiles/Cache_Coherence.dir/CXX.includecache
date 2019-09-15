@@ -18,6 +18,12 @@ queue_control.h
 structs.h
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/structs.h
 
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.cpp
+iostream
+-
+cache_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.h
+
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.h
 cache.h
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h

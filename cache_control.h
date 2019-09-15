@@ -29,6 +29,8 @@ public:
     void write_to_cache(int id, int tag, int data, int status);
 
     void read_write_cache();
+
+    void stop_waiting(int id);
 };
 
 #endif //CACHE_COHERENCE_CACHE_CONTROL_H

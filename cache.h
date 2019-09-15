@@ -17,6 +17,7 @@ class cache {
         //int cache_block[8] = {0};
         //int tag_block[8] = {-1};
         std::ofstream file;
+        std::ofstream file2;
 
         cache_struct cache_block[8];
 
@@ -50,6 +51,10 @@ class cache {
     void set_shared(int direction);
 
     void overwrite_cache(int tag, int status, int data);
+
+    void clean_log();
+
+    void write_log(std::string log);
 };
 
 #endif //CACHE_COHERENCE_CACHE_H

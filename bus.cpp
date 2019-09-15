@@ -26,6 +26,7 @@ void bus::read_memory_request(){ // LLAMADA EN HILO
         core_delay delay_request={};
         delay_request.core_to_delay=request.id;
         delay_request.delay=delay;
+        queues->push_core_delay(delay_request);
 
 
         if (request.type == 0) { // Es un READ
