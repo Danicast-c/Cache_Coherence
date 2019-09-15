@@ -1,1 +1,1 @@
-In cache: #1  CACHE READ MISS: Tag = 13
+In cache: #1  CACHE READ MISS: Tag = 4

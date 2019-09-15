@@ -18,12 +18,6 @@ queue_control.h
 structs.h
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/structs.h
 
-/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.cpp
-iostream
--
-cache_control.h
-/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.h
-
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache_control.h
 cache.h
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h
@@ -36,11 +30,25 @@ queue_control.h
 
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/colors.h
 
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/core.cpp
+iostream
+-
+core.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/core.h
+colors.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/colors.h
+
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/core.h
 cache.h
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/cache.h
 program.h
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/program.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/delay_control.cpp
+iostream
+-
+delay_control.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/delay_control.h
 
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/delay_control.h
 core.h
@@ -79,6 +87,18 @@ fstream
 -
 structs.h
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/structs.h
+
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/program.cpp
+cstdlib
+-
+ctime
+-
+iostream
+-
+random
+-
+program.h
+/Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/program.h
 
 /Users/danicast/Desktop/Proyecto I Arqui II/Cache_Coherence/program.h
 

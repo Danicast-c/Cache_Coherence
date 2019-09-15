@@ -1,9 +1,5 @@
 #include <iostream>
-
 #include <thread>
-#include <fstream>
-
-#include "colors.h"
 #include "memory.h"
 #include "clock.h"
 #include "cache.h"
@@ -28,31 +24,20 @@ void core_3_thread(core *core_3);
 void core_4_thread(core *core_4);
 
 int main(int argc, char *argv[]){
-//    QApplication gui(argc, argv);
-//    MainWindow console;
-//    console.show();
-
-//    std::cout << "\033[1;31m bold red text\033[0m\n"<< std::endl;
-//    std::cout << FBLU("I'm blue.")<< std::endl;
-//    std::cout << BOLD(FRED("I'm red."))<< std::endl;
-
-
-//INSTANCIAS DE ARCHIVOS
-
-    std::ofstream file;
-
-
-//    file.open("cache_caca_file.txt");
-//    file.clear();
-//    for(int i=0; i<16; ++i){
-//        file << std::to_string(i) +"\n";
-//    }
-//    file.close();
 
 
 
+//  Se escoge una distribución de probabilidad y parametro para el generador de numeros random
+    int distribution = 0;
+    float parameter = 4.2;
+//    0 = uniform_dist
+//    1 = poisson_dist
+//    2 = geometric_dist
+//    3 = binomial_dist
 
-// INSTANCIAS DE CLASES__________________*
+
+
+// INSTANCIAS DE CLASES
 
     //INSTANCIA CLOCK
     class clock clock;
@@ -72,10 +57,10 @@ int main(int argc, char *argv[]){
 //    this->poisson_dist = std::poisson_distribution(parameter);
 //    this->geometric_dist = std::geometric_distribution(parameter);
 //    this->binomial_dist = std::binomial_distribution(2, parameter);
-    program program_1;
-    program program_2;
-    program program_3;
-    program program_4;
+    program program_1(distribution,parameter);
+    program program_2(distribution,parameter);
+    program program_3(distribution,parameter);
+    program program_4(distribution,parameter);
 
     //INSTANCIAS CACHES
     cache cache_1 (1, &queues);
@@ -101,9 +86,8 @@ int main(int argc, char *argv[]){
 
     //DECLARACION DE HILOS
 
-    //update_gui ( &cache_1,&cache_1,&cache_1,&cache_1,&memory);
     std::thread t_update_gui (update_gui, &cache_1,&cache_2,&cache_3,&cache_4,&memory);
-//    t_update_gui.detach();
+    //t_update_gui.detach();
 
     std::thread t_delay_control (delay_control_thread, &delay_control);
     //t_delay_control.detach();

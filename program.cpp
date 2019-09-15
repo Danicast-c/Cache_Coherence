@@ -8,6 +8,12 @@
 #include <random>
 #include "program.h"
 
+program::program(int dist_choose, float choosed_parameter) {
+    choosed_dist=dist_choose;
+    parameter=choosed_parameter;
+
+}
+
 int program::get_instruction() {
     int instruction;
     std::random_device random_device;
@@ -29,4 +35,36 @@ int program::get_direction() {
 
     return randomNumber;
 
+}
+int program::get_instruction_2() {
+    int instruction;
+    std::random_device random_device;
+    std::mt19937 random_engine(random_device());
+    auto randomNumber=0;
+    if (choosed_dist == 0){
+        std::uniform_int_distribution selected_dist(0, 2);
+        randomNumber = selected_dist(random_engine);
+
+    } else if(choosed_dist == 1){
+        std::poisson_distribution selected_dist(parameter);
+        randomNumber = selected_dist(random_engine);
+
+    } else if (choosed_dist == 2){
+        std::geometric_distribution selected_dist(parameter);
+        randomNumber = selected_dist(random_engine);
+
+    } else{
+        std::binomial_distribution selected_dist(2,parameter);
+        randomNumber = selected_dist(random_engine);
+
+    }
+    if (randomNumber%3 == 0){
+        instruction = 0;
+
+    } else if (randomNumber%3 == 1){
+        instruction = 1;
+    } else {
+        instruction = 2;
+    }
+    return instruction;
 }

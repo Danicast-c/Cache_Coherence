@@ -22,7 +22,7 @@ void core::proccess(){
 }
 void core::work(){
     int instruction;
-    instruction = program->get_instruction();
+    instruction = program->get_instruction_2();
     if (instruction == 0){                      // 0 = proccess
         proccess();
         //console->write_core(id,"Instruction: PROCCESS (1 Cicle)");
